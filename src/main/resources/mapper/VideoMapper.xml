@@ -88,4 +88,15 @@
         where
          id = #{video_id}
     </select>
+
+    <select id="selectOrderById" resultType="VideoOrder">
+        select
+         *
+        from
+         video_order
+        where
+         user_id = #{user_id}
+        and
+         video_id = #{video_id}
+    </select>
 </mapper>

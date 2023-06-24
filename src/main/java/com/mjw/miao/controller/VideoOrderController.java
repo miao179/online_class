@@ -42,4 +42,12 @@ public class VideoOrderController {
         List<VideoOrder> videoOrderList = videoOrderService.listOrderByUserId(userId);
         return JsonData.buildSuccess(videoOrderList);
     }
+
+    @GetMapping("/userOrder")
+    public JsonData userOrder(HttpServletRequest request,Integer videoId){
+        Integer userId = (Integer) request.getAttribute("user_id");
+
+        VideoOrder videoOrder = videoOrderService.userOrderById(userId,videoId);
+        return JsonData.buildSuccess(videoOrder);
+    }
 }

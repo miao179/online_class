@@ -29,7 +29,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
         registry.addInterceptor(corsInterceptor()).addPathPatterns("/**");
         registry.addInterceptor(loginInterceptor()).addPathPatterns("/api/v1/pri/*/*/**")
                 //不拦截哪些路径
-                .excludePathPatterns("/api/v1/pri/user/login","/api/v1/pri/user/register");
+                .excludePathPatterns("/api/v1/pri/user/login","/api/v1/pri/user/register","/api/v1/pri/user/list");
             WebMvcConfigurer.super.addInterceptors(registry);
     }
 

@@ -96,4 +96,15 @@ public class VideoOrderServiceImpl implements VideoOrderService {
     public List<VideoOrder> listOrderByUserId(Integer userId) {
         return videoOrderMapper.listOrderByUserId(userId);
     }
+
+    /**
+     * 通过用户id查询相应的订单
+     * @param userId
+     * @return
+     */
+    @Override
+    public VideoOrder userOrderById(Integer userId,Integer videoId) {
+        VideoOrder videoOrder = videoMapper.selectOrderById(userId,videoId);
+        return videoOrder;
+    }
 }
